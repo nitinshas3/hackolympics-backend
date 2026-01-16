@@ -60,7 +60,7 @@ test-results/
 
 # Notebooks
 .ipynb_checkpoints
-*.ipynb
+
 
 # Environment variables / secrets
 .env
