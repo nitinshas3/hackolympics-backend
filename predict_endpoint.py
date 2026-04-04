@@ -229,6 +229,7 @@ def auto_predict_irrigation(sensor_data):
 # --- Manual prediction endpoint (optional) ---
 @app.post("/predict")
 def manual_predict(
+
     latitude: float = Query(14.45),
     longitude: float = Query(75.90),
     soil_moisture_percent: float | None = Query(None),
