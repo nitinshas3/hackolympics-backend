@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from typing import List, Optional
 
 class FarmCreate(BaseModel):
-
+    farm_id:str
     name: str
     crop_type: str
     size_acres: float
