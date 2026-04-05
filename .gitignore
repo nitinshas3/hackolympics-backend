@@ -63,7 +63,7 @@ test-results/
 
 
 # Environment variables / secrets
-.env
+models/.env
 .env.*
 *.secret
 *.key

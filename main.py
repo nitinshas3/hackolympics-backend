@@ -60,6 +60,7 @@ except Exception as e:
     model = None
 
 # ========================== WEATHER HELPER FUNCTION (Fixed) ==========================
+
 def fetch_weather_and_moisture_change(lat: float, lon: float):
     """Your original weather function - simplified for stability"""
     try:
@@ -96,6 +97,7 @@ def fetch_weather_and_moisture_change(lat: float, lon: float):
 
 
 # ========================== AUTO IRRIGATION PREDICTION ==========================
+
 def auto_predict_irrigation(sensor_data: dict):
     global latest_irrigation_prediction
     if model is None:
@@ -165,13 +167,13 @@ app.include_router(farm_router, prefix="/api")
 @app.get("/")
 async def root():
     return {
-        "message": "AgriSmart AI Backend is running successfully 🚀",
+        "message": "AgriSmart AI Backend is running successfullyssdsds🚀",
         "documentation": "/docs"
     }
 
 @app.get("/health")
 async def health_check():
-    return {"status": "healthy"}
+    return {"status": "healthydssd"}
 
 # Sensor Routes
 @app.get("/sensor")
@@ -193,7 +195,9 @@ async def receive_sensor_data(sensor: dict):
 
     # Auto trigger irrigation prediction
     prediction = auto_predict_irrigation(sensor)
-
+    print({"status": "success",
+        "sensor_data": sensor,
+        "irrigation_prediction": prediction})
     return {
         "status": "success",
         "sensor_data": sensor,
@@ -207,6 +211,8 @@ async def get_irrigation_prediction():
     if latest_irrigation_prediction is None:
         return {"error": "No prediction available yet. Send sensor data first."}
     return latest_irrigation_prediction
+
+
 
 
 # ========================== RUN SERVER ==========================
